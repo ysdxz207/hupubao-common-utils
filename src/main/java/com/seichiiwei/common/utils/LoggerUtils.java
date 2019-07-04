@@ -27,8 +27,8 @@ import org.slf4j.LoggerFactory;
 public class LoggerUtils {
 
     /**
-     * 获取日志记录对象，若有调用方则日志打印变量[%c]为调用类
-     * 否则为LoggerUtils.class
+     * <p>获取日志记录对象，若有调用方则日志打印变量[%c]为调用类</p>
+     * <p>否则为LoggerUtils.class</p>
      *
      * @return
      */
