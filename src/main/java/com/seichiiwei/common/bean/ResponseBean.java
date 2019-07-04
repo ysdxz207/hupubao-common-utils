@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSON;
 import com.seichiiwei.common.error.ErrorInfo;
 import com.seichiiwei.common.exceptions.BusinessException;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.apache.commons.lang3.StringUtils;
 
@@ -30,6 +31,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 @Data
 @Accessors(chain = true)
+@NoArgsConstructor
 public class ResponseBean<T> {
 
     private static final long serialVersionUID = 1L;
