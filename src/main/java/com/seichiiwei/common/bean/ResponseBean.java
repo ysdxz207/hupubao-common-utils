@@ -39,24 +39,22 @@ public class ResponseBean<T> {
     public static final String CODE_FAIL = "ERROR";
     public static final String MSG_FAIL = "Business Error.";
 
-    private String code = CODE_SUCCESS;
-    private String msg = MSG_SUCCESS;
-    private String bizCode;
-    private String bizMsg;
+    private String code = CODE_FAIL;
+    private String msg = MSG_FAIL;
     private T data;
     private Long timestamp;
 
 
     public ResponseBean<T> error(String code, String msg) {
-        this.bizCode = code;
-        this.bizMsg = msg;
+        this.code = code;
+        this.msg = msg;
         this.timestamp = System.currentTimeMillis();
         return this;
     }
 
     public ResponseBean<T> success(T data, String msg) {
-        this.bizCode = CODE_SUCCESS;
-        this.bizMsg = msg;
+        this.code = CODE_SUCCESS;
+        this.msg = msg;
         this.timestamp = System.currentTimeMillis();
         this.data = data;
         return this;
