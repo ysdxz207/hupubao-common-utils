@@ -22,7 +22,7 @@ import com.seichiiwei.common.bean.ResponseBean;
  * @date 2019-07-04
  * 返回结构封装器
  */
-public class HttpResponseBuilder {
+public class ResponseBuilder {
 
     public static  <T> ResponseBean<T> buildOk() {
         return new ResponseBean<T>().success();
