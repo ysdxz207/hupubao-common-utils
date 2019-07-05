@@ -23,6 +23,8 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ysdxz207
@@ -32,7 +34,7 @@ import org.apache.commons.lang3.StringUtils;
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor
-public class ResponseBean<T> {
+public class ResponseBean<T> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
