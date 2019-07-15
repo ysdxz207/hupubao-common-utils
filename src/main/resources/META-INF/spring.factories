@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.seichiiwei.common.utils.ResourceUtils
+  com.seichiiwei.common.utils.ResourceUtils,\
+  com.seichiiwei.common.logger.aop.LogReqResArgsAspect
