@@ -13,26 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.seichiiwei.common.utils;
-
-import com.seichiiwei.common.bean.ResponseBean;
+package com.hupubao.common.error;
 
 /**
- * @author ysdxz207
- * @date 2019-07-04
- * 返回结构封装器
+ *
+ * @author Seichii.wei
+ * @date 2019-06-10 14:26:15
+ * 所有错误都继承自此接口
  */
-public class ResponseBuilder {
+public interface ErrorInfo {
+    String getErrorCode();
 
-    public static  <T> ResponseBean<T> buildOk() {
-        return new ResponseBean<T>().success();
-    }
-
-    public static  <T> ResponseBean<T> buildOk(T data, String msg) {
-        return new ResponseBean<T>().success(data, msg);
-    }
-
-    public static  <T> ResponseBean<T> buildOk(T data) {
-        return buildOk(data, ResponseBean.MSG_SUCCESS);
-    }
+    String getErrorMsg();
 }

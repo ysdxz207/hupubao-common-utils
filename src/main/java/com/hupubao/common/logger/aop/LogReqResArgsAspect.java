@@ -1,9 +1,9 @@
-package com.seichiiwei.common.logger.aop;
+package com.hupubao.common.logger.aop;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.seichiiwei.common.logger.annotations.LogReqResArgs;
-import com.seichiiwei.common.utils.LoggerUtils;
+import com.hupubao.common.logger.annotations.LogReqResArgs;
+import com.hupubao.common.utils.LoggerUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;

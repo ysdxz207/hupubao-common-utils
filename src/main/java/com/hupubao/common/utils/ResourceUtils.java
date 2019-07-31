@@ -1,4 +1,4 @@
-package com.seichiiwei.common.utils;
+package com.hupubao.common.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;

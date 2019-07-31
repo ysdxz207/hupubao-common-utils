@@ -13,16 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.seichiiwei.common.error;
-
+package com.hupubao.common.exceptions;
 /**
  *
  * @author Seichii.wei
- * @date 2019-06-10 14:26:15
- * 所有错误都继承自此接口
+ * @date 2019-06-10 16:24:33
+ * 业务异常类
  */
-public interface ErrorInfo {
-    String getErrorCode();
+public class BusinessException extends RuntimeException {
+    private String code;
 
-    String getErrorMsg();
+    public BusinessException(String code, String message) {
+        super(message);
+        this.code = code;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
 }

@@ -13,22 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.seichiiwei.common.exceptions;
-/**
- *
- * @author Seichii.wei
- * @date 2019-06-10 16:24:33
- * 业务异常类
- */
-public class BusinessException extends RuntimeException {
-    private String code;
+package com.hupubao.common.utils;
 
-    public BusinessException(String code, String message) {
-        super(message);
-        this.code = code;
+import com.hupubao.common.bean.ResponseBean;
+
+/**
+ * @author ysdxz207
+ * @date 2019-07-04
+ * 返回结构封装器
+ */
+public class ResponseBuilder {
+
+    public static  <T> ResponseBean<T> buildOk() {
+        return new ResponseBean<T>().success();
     }
 
-    public String getCode() {
-        return this.code;
+    public static  <T> ResponseBean<T> buildOk(T data, String msg) {
+        return new ResponseBean<T>().success(data, msg);
+    }
+
+    public static  <T> ResponseBean<T> buildOk(T data) {
+        return buildOk(data, ResponseBean.MSG_SUCCESS);
     }
 }

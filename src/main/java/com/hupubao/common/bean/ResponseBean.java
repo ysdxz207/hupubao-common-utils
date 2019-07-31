@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.seichiiwei.common.bean;
+package com.hupubao.common.bean;
 
 import com.alibaba.fastjson.JSON;
-import com.seichiiwei.common.error.ErrorInfo;
-import com.seichiiwei.common.exceptions.BusinessException;
+import com.hupubao.common.error.ErrorInfo;
+import com.hupubao.common.exceptions.BusinessException;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;

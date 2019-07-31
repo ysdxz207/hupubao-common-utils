@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.seichiiwei.common.utils;
+package com.hupubao.common.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

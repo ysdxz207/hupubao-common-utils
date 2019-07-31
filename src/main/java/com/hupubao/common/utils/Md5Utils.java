@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.seichiiwei.common.utils;
+package com.hupubao.common.utils;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

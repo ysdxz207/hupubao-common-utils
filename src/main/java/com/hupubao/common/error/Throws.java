@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.seichiiwei.common.error;
+package com.hupubao.common.error;
 
+import com.hupubao.common.bean.ResponseBean;
+import com.hupubao.common.exceptions.BusinessException;
 import org.apache.commons.lang3.StringUtils;
-import com.seichiiwei.common.bean.ResponseBean;
-import com.seichiiwei.common.exceptions.BusinessException;
 
 /**
  * 错误异常抛出

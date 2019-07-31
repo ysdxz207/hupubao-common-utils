@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.seichiiwei.common.utils.rsa;
+package com.hupubao.common.utils.rsa;
 
-import com.seichiiwei.common.utils.Md5Utils;
-import com.seichiiwei.common.utils.StringUtils;
+import com.hupubao.common.utils.StringUtils;
+import com.hupubao.common.utils.Md5Utils;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 

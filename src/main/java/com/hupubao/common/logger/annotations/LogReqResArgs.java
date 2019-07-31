@@ -1,4 +1,4 @@
-package com.seichiiwei.common.logger.annotations;
+package com.hupubao.common.logger.annotations;
 
 import java.lang.annotation.*;
 

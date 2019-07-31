@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>com.seichiiwei</groupId>
-    <artifactId>seichii-common</artifactId>
+    <groupId>win.hupubao</groupId>
+    <artifactId>hupubao-common-utils</artifactId>
     <version>0.0.1</version>
-    <name>seichii-common</name>
+    <name>hupubao-common-utils</name>
     <packaging>jar</packaging>
-    <url>https://github.com/ysdxz207/seichii-common</url>
-    <description>http请求访问工具</description>
+    <url>https://github.com/ysdxz207/hupubao-common-utils</url>
+    <description>通用工具集</description>
 
 
     <properties>

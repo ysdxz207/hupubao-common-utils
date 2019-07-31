@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.seichiiwei.common.utils;
+package com.hupubao.common.utils;
 
-import com.seichiiwei.common.error.ErrorInfo;
-import com.seichiiwei.common.error.SystemError;
-import com.seichiiwei.common.error.Throws;
+import com.hupubao.common.error.ErrorInfo;
+import com.hupubao.common.error.SystemError;
+import com.hupubao.common.error.Throws;
 
 /**
  * @author ysdxz207
