@@ -37,7 +37,7 @@ public class Assert {
      * @param errorInfo
      * @param message
      */
-    public static void isTure(boolean expression,
+    public static void isTrue(boolean expression,
                               ErrorInfo errorInfo,
                               String message) {
         if (!expression) {
@@ -45,9 +45,9 @@ public class Assert {
         }
     }
 
-    public static void isTure(boolean expression,
+    public static void isTrue(boolean expression,
                               ErrorInfo errorInfo) {
-        isTure(expression, errorInfo, errorInfo.getErrorMsg());
+        isTrue(expression, errorInfo, errorInfo.getErrorMsg());
     }
 
     /**
@@ -60,7 +60,7 @@ public class Assert {
     public static void isFalse(boolean expression,
                                ErrorInfo errorInfo,
                                String message) {
-        isTure(!expression, errorInfo, message);
+        isTrue(!expression, errorInfo, message);
     }
 
     public static void isFalse(boolean expression,
@@ -72,7 +72,7 @@ public class Assert {
                                ErrorInfo errorInfo,
                                String message) {
 
-        isTure(object != null, errorInfo, message);
+        isTrue(object != null, errorInfo, message);
     }
 
     public static void notNull(Object object,
