@@ -30,7 +30,7 @@ import com.hupubao.common.error.Throws;
 public class Assert {
 
     /**
-     * <p>表达式是否为真</p>
+     * <p>断言表达式为真</p>
      * <p>为假则抛出错误</p>
      *
      * @param expression
@@ -51,7 +51,7 @@ public class Assert {
     }
 
     /**
-     * <p>表达式是否为假</p>
+     * <p>断言表达式为假</p>
      * <p>为真则抛出错误</p>
      * @param expression
      * @param errorInfo
