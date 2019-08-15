@@ -86,4 +86,22 @@ public class Assert {
     }
 
 
+    public static void notEmpty(Object object,
+                               ErrorInfo errorInfo,
+                               String message) {
+
+        isTrue(StringUtils.isNotBlank(object), errorInfo, message);
+    }
+
+    public static void notEmpty(Object object,
+                               ErrorInfo errorInfo) {
+        notEmpty(object, errorInfo, errorInfo.getErrorMsg());
+    }
+
+    public static void notEmpty(Object object,
+                               String message) {
+        notEmpty(object, SystemError.SYSTEM_BISINESS_ERROR, message);
+    }
+
+
 }
