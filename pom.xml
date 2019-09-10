@@ -7,11 +7,11 @@
 
     <groupId>com.hupubao</groupId>
     <artifactId>hupubao-common-utils</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.3</version>
     <name>hupubao-common-utils</name>
     <packaging>jar</packaging>
     <url>https://github.com/ysdxz207/hupubao-common-utils</url>
-    <description>通用工具集</description>
+    <description>通用工具集，包含通用响应参数，错误码抛出，RSA，MD5及签名工具等</description>
 
 
     <properties>

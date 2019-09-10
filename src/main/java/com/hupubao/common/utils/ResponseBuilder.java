@@ -28,6 +28,10 @@ public class ResponseBuilder {
         return new ResponseBean<T>().success();
     }
 
+    public static  <T> ResponseBean<T> buildOk(String msg) {
+        return new ResponseBean<T>().success(msg);
+    }
+
     public static  <T> ResponseBean<T> buildOk(T data, String msg) {
         return new ResponseBean<T>().success(data, msg);
     }
