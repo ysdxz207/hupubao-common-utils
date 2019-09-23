@@ -1,5 +1,6 @@
 package com.hupubao.common.wrapper;
 
+import com.alibaba.fastjson.JSON;
 import org.apache.commons.io.IOUtils;
 
 import javax.servlet.ReadListener;
@@ -20,7 +21,13 @@ public class RequestWrapper extends HttpServletRequestWrapper {
     private final String body;
     public RequestWrapper(HttpServletRequest request) throws IOException {
         super(request);
-        body = IOUtils.toString(request.getInputStream(), "UTF-8");
+        String bodyStr = IOUtils.toString(request.getInputStream(), "UTF-8");
+        if (bodyStr != null && !bodyStr.isEmpty()) {
+            Object bodyJson = JSON.parse(bodyStr);
+            body = bodyJson == null ? "" : bodyJson.toString();
+        } else {
+            body = "";
+        }
     }
 
     @Override
