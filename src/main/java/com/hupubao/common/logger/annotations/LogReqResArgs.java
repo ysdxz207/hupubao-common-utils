@@ -24,6 +24,8 @@ public @interface LogReqResArgs {
 
     public String titleRequest() default "request parameters:";
 
+    public String titleRequestBody() default "request body:";
+
     public String titleResponse() default "response result:";
 
     public String titleException() default "exception:";

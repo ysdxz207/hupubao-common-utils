@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.hupubao.common.logger.annotations.LogReqResArgs;
 import com.hupubao.common.utils.LoggerUtils;
+import com.hupubao.common.wrapper.RequestWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
@@ -122,12 +123,18 @@ public class LogReqResArgsAspect {
         if (info instanceof HttpServletRequest) {
             sb.append(logReqResArgs.titleRequest());
             sb.append(JSON.toJSONString(getRequestArgs((HttpServletRequest) info)));
+            sb.append("\n");
+            sb.append(logReqResArgs.titleRequestBody());
+            sb.append(JSON.toJSONString(getRequestBody((HttpServletRequest) info)));
         } else {
             if (logReqResArgs.logResponseWithRequest()) {
                 HttpServletRequest request = getHttpServletRequest();
                 if (request != null) {
                     sb.append(logReqResArgs.titleRequest());
                     sb.append(JSON.toJSONString(getRequestArgs(request)));
+                    sb.append("\n");
+                    sb.append(logReqResArgs.titleRequestBody());
+                    sb.append(JSON.toJSONString(getRequestBody((HttpServletRequest) info)));
                     sb.append("\n");
                 }
             }
@@ -196,6 +203,16 @@ public class LogReqResArgsAspect {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    /**
+     * 获取请求的body
+     * @param request
+     * @return
+     */
+    private String getRequestBody(HttpServletRequest request) {
+        RequestWrapper requestWrapper = (RequestWrapper) request;
+        return requestWrapper.getBody();
     }
 
     /**
