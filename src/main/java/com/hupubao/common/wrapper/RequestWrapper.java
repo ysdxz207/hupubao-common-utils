@@ -21,13 +21,7 @@ public class RequestWrapper extends HttpServletRequestWrapper {
     private final String body;
     public RequestWrapper(HttpServletRequest request) throws IOException {
         super(request);
-        String bodyStr = IOUtils.toString(request.getInputStream(), "UTF-8");
-        if (bodyStr != null && !bodyStr.isEmpty()) {
-            Object bodyJson = JSON.parse(bodyStr);
-            body = bodyJson == null ? "" : bodyJson.toString();
-        } else {
-            body = "";
-        }
+        body = IOUtils.toString(request.getInputStream(), "UTF-8");
     }
 
     @Override
