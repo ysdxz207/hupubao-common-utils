@@ -9,6 +9,8 @@
 </dependency>
 ```
 
+版本自行查看：[https://mvnrepository.com/artifact/com.hupubao/hupubao-common-utils](https://mvnrepository.com/artifact/com.hupubao/hupubao-common-utils)
+
 如需使用[http请求工具](https://github.com/ysdxz207/hupubao-common-http)，可增加：
 ```xml
 <dependency>
