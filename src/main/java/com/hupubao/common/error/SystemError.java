@@ -17,7 +17,7 @@ package com.hupubao.common.error;
 
 /**
  *
- * @author Seichii.wei
+ * @author ysdxz207
  * @date 2019-06-10 14:25:59
  * 系统异常
  */

@@ -17,7 +17,7 @@ package com.hupubao.common.error;
 
 /**
  *
- * @author Seichii.wei
+ * @author ysdxz207
  * @date 2019-06-10 14:26:15
  * 所有错误都继承自此接口
  */

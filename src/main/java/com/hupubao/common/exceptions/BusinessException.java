@@ -16,7 +16,7 @@
 package com.hupubao.common.exceptions;
 /**
  *
- * @author Seichii.wei
+ * @author ysdxz207
  * @date 2019-06-10 16:24:33
  * 业务异常类
  */
