@@ -1,6 +1,5 @@
 package com.hupubao.common.wrapper;
 
-import com.alibaba.fastjson.JSON;
 import org.apache.commons.io.IOUtils;
 
 import javax.servlet.ReadListener;
