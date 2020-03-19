@@ -1,26 +1,34 @@
 package com.hupubao.common.wrapper;
 
-import org.apache.commons.io.IOUtils;
-
 import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * <h1>请求包装器，为了解决HttpServletRequest不能重复读取InputStream问题</h1>
  * @author ysdxz207
- * @date 2019-09-12 16:13:17
+ * @date 2019-09-12
  */
 public class RequestWrapper extends HttpServletRequestWrapper {
     private final String body;
     public RequestWrapper(HttpServletRequest request) throws IOException {
         super(request);
-        body = IOUtils.toString(request.getInputStream(), "UTF-8");
+
+
+        StringBuilder textBuilder = new StringBuilder();
+        try (Reader reader = new BufferedReader(new InputStreamReader
+                (request.getInputStream(), Charset.forName(StandardCharsets.UTF_8.name())))) {
+            int c;
+            while ((c = reader.read()) != -1) {
+                textBuilder.append((char) c);
+            }
+        }
+
+        body = textBuilder.toString();
     }
 
     @Override

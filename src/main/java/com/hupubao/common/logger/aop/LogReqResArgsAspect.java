@@ -4,8 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.hupubao.common.logger.annotations.LogReqResArgs;
 import com.hupubao.common.utils.LoggerUtils;
+import com.hupubao.common.utils.StringUtils;
 import com.hupubao.common.wrapper.RequestWrapper;
-import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -24,7 +24,7 @@ import java.util.Enumeration;
 
 /**
  * @author ysdxz207
- * @date 2018-06-11 14:05:53
+ * @date 2018-06-11
  * 请求，返回参数日志记录工具
  */
 @Aspect

@@ -4,7 +4,7 @@ import java.lang.annotation.*;
 
 /**
  * @author ysdxz207
- * @date 2018-06-08 17:48:33
+ * @date 2018-06-08
  * 是否记录请求及返回参数日志功能注解
  * 有此注解则记录日志
  * 使用条件：有HttpServletRequest和HttpServletResponse参数，且有返回值

@@ -18,10 +18,10 @@ package com.hupubao.common.bean;
 import com.alibaba.fastjson.JSON;
 import com.hupubao.common.error.ErrorInfo;
 import com.hupubao.common.exceptions.BusinessException;
+import com.hupubao.common.utils.StringUtils;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
 

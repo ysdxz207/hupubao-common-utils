@@ -21,7 +21,10 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,8 +36,23 @@ import static java.util.regex.Pattern.compile;
  */
 public class StringUtils {
 
+
+    /**
+     * <pre>
+     *     StringUtils.isBlank(null)      = true
+     *     StringUtils.isBlank("")        = true
+     *     StringUtils.isBlank(" ")       = true
+     *     StringUtils.isBlank("abc")     = false
+     *     StringUtils.isBlank("  abc  ") = false
+     * </pre>
+     *
+     * @param obj
+     * @return
+     */
     public static boolean isBlank(Object obj) {
-        return obj == null || org.apache.commons.lang3.StringUtils.isBlank(obj.toString())
+        return obj == null
+                || obj.toString().isEmpty()
+                || obj.toString().trim().isEmpty()
                 || obj.toString().equalsIgnoreCase("null");
     }
 
@@ -42,6 +60,15 @@ public class StringUtils {
         return !isBlank(obj);
     }
 
+    /**
+     * <pre>
+     *     StringUtils.isEmpty(null) = true
+     *     StringUtils.isEmpty("")   = true
+     * </pre>
+     *
+     * @param obj
+     * @return
+     */
     public static boolean isEmpty(Object obj) {
         return obj == null || obj.toString().isEmpty();
     }
@@ -135,6 +162,7 @@ public class StringUtils {
 
     /**
      * <h1>检查是否是json字符串</h1>
+     *
      * @param str
      * @return
      */
@@ -166,6 +194,7 @@ public class StringUtils {
 
     /**
      * <h1>乱码检测</h1>
+     *
      * @param str
      * @return
      */

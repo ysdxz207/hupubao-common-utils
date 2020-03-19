@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author ysdxz207
- * @date 2018-05-24 15:01:20
+ * @date 2018-05-24
  * 日志记录工具
  */
 public class LoggerUtils {

@@ -32,6 +32,7 @@ public class Assert {
     /**
      * <p>断言表达式为真</p>
      * <p>为假则抛出错误</p>
+     * <p>其他重载方法都调用此方法</p>
      *
      * @param expression
      * @param errorInfo
@@ -40,7 +41,7 @@ public class Assert {
     public static void isTrue(boolean expression,
                               ErrorInfo errorInfo,
                               String message) {
-        if (!expression) {
+        if (!(expression)) {
             Throws.throwError(errorInfo, message);
         }
     }
@@ -103,5 +104,11 @@ public class Assert {
         notEmpty(object, SystemError.SYSTEM_BISINESS_ERROR, message);
     }
 
+
+    public static void main(String[] args) {
+        int a = 0;
+        int b = -1;
+        Assert.isTrue(a >= 0 && b < 0, SystemError.PARAMETER_ERROR);
+    }
 
 }

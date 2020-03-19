@@ -18,7 +18,7 @@ package com.hupubao.common.error;
 /**
  *
  * @author ysdxz207
- * @date 2019-06-10 14:26:15
+ * @date 2019-06-10
  * 所有错误都继承自此接口
  */
 public interface ErrorInfo {

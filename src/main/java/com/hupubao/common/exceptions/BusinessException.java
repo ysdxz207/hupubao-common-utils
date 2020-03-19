@@ -17,7 +17,7 @@ package com.hupubao.common.exceptions;
 /**
  *
  * @author ysdxz207
- * @date 2019-06-10 16:24:33
+ * @date 2019-06-10
  * 业务异常类
  */
 public class BusinessException extends RuntimeException {

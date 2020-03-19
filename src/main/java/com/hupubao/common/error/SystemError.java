@@ -18,7 +18,7 @@ package com.hupubao.common.error;
 /**
  *
  * @author ysdxz207
- * @date 2019-06-10 14:25:59
+ * @date 2019-06-10
  * 系统异常
  */
 public enum SystemError implements ErrorInfo {

@@ -17,7 +17,7 @@ package com.hupubao.common.error;
 
 import com.hupubao.common.bean.ResponseBean;
 import com.hupubao.common.exceptions.BusinessException;
-import org.apache.commons.lang3.StringUtils;
+import com.hupubao.common.utils.StringUtils;
 
 /**
  * 错误异常抛出

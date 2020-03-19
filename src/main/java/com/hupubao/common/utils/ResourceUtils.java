@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 /**
  * @author ysdxz207
- * @date 2019-07-11 11:08:20
+ * @date 2019-07-11
  * SpringBoot环境资源目录读取文件工具
  * 可以使用@Autowired
  */
