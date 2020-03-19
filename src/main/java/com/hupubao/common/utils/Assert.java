@@ -23,9 +23,6 @@ import com.hupubao.common.error.Throws;
  * @author ysdxz207
  * @date 2019-06-27
  * <p>断言工具</p>
- * <p>注意某些场合下使用将会导致预期结果不正确</p>
- * <p>因此如：isTure方法仅用于单条件场合断言</p>
- * <p>不适用于[如果...且...]这种有前置条件的表达式语句</p>
  */
 public class Assert {
 
@@ -41,7 +38,7 @@ public class Assert {
     public static void isTrue(boolean expression,
                               ErrorInfo errorInfo,
                               String message) {
-        if (!(expression)) {
+        if (!expression) {
             Throws.throwError(errorInfo, message);
         }
     }
@@ -102,13 +99,6 @@ public class Assert {
     public static void notEmpty(Object object,
                                String message) {
         notEmpty(object, SystemError.SYSTEM_BISINESS_ERROR, message);
-    }
-
-
-    public static void main(String[] args) {
-        int a = 0;
-        int b = -1;
-        Assert.isTrue(a >= 0 && b < 0, SystemError.PARAMETER_ERROR);
     }
 
 }
