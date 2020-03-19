@@ -7,7 +7,7 @@
 
     <groupId>com.hupubao</groupId>
     <artifactId>hupubao-common-utils</artifactId>
-    <version>0.0.6</version>
+    <version>0.0.7</version>
     <name>hupubao-common-utils</name>
     <packaging>jar</packaging>
     <url>https://github.com/ysdxz207/hupubao-common-utils</url>
@@ -17,7 +17,7 @@
     <properties>
         <maven.compiler.level>1.8</maven.compiler.level>
         <encoding>UTF-8</encoding>
-        <springboot.version>2.1.6.RELEASE</springboot.version>
+        <springboot.version>2.2.0.RELEASE</springboot.version>
     </properties>
 
     <distributionManagement>
