@@ -1,12 +1,8 @@
 package com.hupubao.common.wrapper;
 
-import org.springframework.util.StreamUtils;
+import org.springframework.web.util.ContentCachingRequestWrapper;
 
-import javax.servlet.ReadListener;
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
-import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -14,51 +10,14 @@ import java.nio.charset.StandardCharsets;
  * @author ysdxz207
  * @date 2019-09-12
  */
-public class RequestWrapper extends HttpServletRequestWrapper {
+public class RequestWrapper extends ContentCachingRequestWrapper {
 
-    private byte[] cachedBody;
-
-    public RequestWrapper(HttpServletRequest request) throws IOException {
+    public RequestWrapper(HttpServletRequest request) {
         super(request);
-
-
-        InputStream requestInputStream = request.getInputStream();
-        this.cachedBody = StreamUtils.copyToByteArray(requestInputStream);
-    }
-
-    @Override
-    public ServletInputStream getInputStream() throws IOException {
-        return new ServletInputStream() {
-            @Override
-            public boolean isFinished() {
-                return cachedBody.length == 0;
-            }
-            @Override
-            public boolean isReady() {
-                return true;
-            }
-
-            @Override
-            public void setReadListener(ReadListener readListener) {
-
-            }
-
-            @Override
-            public int read() throws IOException {
-                return new ByteArrayInputStream(cachedBody).read();
-            }
-        };
-    }
-
-    @Override
-    public BufferedReader getReader() throws IOException {
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(this.cachedBody);
-        return new BufferedReader(new InputStreamReader(byteArrayInputStream));
     }
 
     public String getBody() {
-        return new String(cachedBody, StandardCharsets.UTF_8);
+        return new String(getContentAsByteArray(), StandardCharsets.UTF_8);
     }
-
 }
 

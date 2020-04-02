@@ -1,6 +1,6 @@
 package com.hupubao.common.filter;
 
-import com.hupubao.common.wrapper.RequestWrapper;
+import org.springframework.web.util.ContentCachingRequestWrapper;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +17,7 @@ public class RepeatedlyReadFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         ServletRequest requestWrapper = null;
         if (request instanceof HttpServletRequest) {
-            requestWrapper = new RequestWrapper((HttpServletRequest) request);
+            requestWrapper = new ContentCachingRequestWrapper((HttpServletRequest) request);
         }
         if (requestWrapper == null) {
             chain.doFilter(request, response);
