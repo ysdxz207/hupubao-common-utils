@@ -7,7 +7,7 @@
 
     <groupId>com.hupubao</groupId>
     <artifactId>hupubao-common-utils</artifactId>
-    <version>0.0.7</version>
+    <version>0.1.0</version>
     <name>hupubao-common-utils</name>
     <packaging>jar</packaging>
     <url>https://github.com/ysdxz207/hupubao-common-utils</url>
