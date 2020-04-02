@@ -207,12 +207,19 @@ public class LogReqResArgsAspect {
 
     /**
      * 获取请求的body
+     *
      * @param request
      * @return
      */
     private String getRequestBody(HttpServletRequest request) {
-        RequestWrapper requestWrapper = (RequestWrapper) request;
-        return requestWrapper.getBody();
+        if (request instanceof RequestWrapper) {
+
+            RequestWrapper requestWrapper = (RequestWrapper) request;
+            return requestWrapper.getBody();
+        }
+
+        LoggerUtils.warn("If you need to get request body, you can configure RepeatedlyReadFilter filter to your project.");
+        return "";
     }
 
     /**
