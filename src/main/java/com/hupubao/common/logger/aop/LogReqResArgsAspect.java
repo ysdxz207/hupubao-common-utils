@@ -229,7 +229,6 @@ public class LogReqResArgsAspect {
      */
     private HttpServletRequest getHttpServletRequest() {
         ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = servletRequestAttributes.getRequest();
-        return request;
+        return servletRequestAttributes.getRequest();
     }
 }
