@@ -66,6 +66,8 @@ public class RSA {
     private static PublicKey publicKey;
     private static PrivateKey privateKey;
 
+    private RSA() {
+    }
 
     public static RSA getInstance() {
         RSA instance = RSAKeyUtilsInstance.INSTANCE.singleton;
