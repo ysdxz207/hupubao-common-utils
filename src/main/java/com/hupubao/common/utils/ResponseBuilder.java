@@ -16,6 +16,8 @@
 package com.hupubao.common.utils;
 
 import com.hupubao.common.bean.ResponseBean;
+import com.hupubao.common.error.ErrorInfo;
+import com.hupubao.common.error.SystemError;
 
 /**
  * @author ysdxz207
@@ -38,5 +40,19 @@ public class ResponseBuilder {
 
     public static  <T> ResponseBean<T> buildOk(T data) {
         return buildOk(data, ResponseBean.MSG_SUCCESS);
+    }
+
+
+
+    public static  <T> ResponseBean<T> buildError() {
+        return new ResponseBean<T>().error(SystemError.SYSTEM_BISINESS_ERROR);
+    }
+
+    public static  <T> ResponseBean<T> buildError(String msg) {
+        return new ResponseBean<T>().error(SystemError.SYSTEM_BISINESS_ERROR, msg);
+    }
+
+    public static  <T> ResponseBean<T> buildError(ErrorInfo errorInfo) {
+        return new ResponseBean<T>().error(errorInfo);
     }
 }

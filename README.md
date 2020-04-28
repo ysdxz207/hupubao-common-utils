@@ -21,3 +21,11 @@
 ```
 
 - [日志记录工具](./doc/LogReqResArgs.MD)
+
+
+### 历史版本
+
+- 2020-04-28 版本：0.0.7
+
+1. 可重复读Request直接使用spring的ContentCachingRequestWrapper
+2. 私有化RSA工具的构造方法

@@ -16,10 +16,9 @@
 
 package com.hupubao.common.utils.rsa;
 
-import com.hupubao.common.utils.StringUtils;
 import com.hupubao.common.utils.Md5Utils;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import com.hupubao.common.utils.StringUtils;
+import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;
@@ -43,8 +42,6 @@ public class RSA {
 
 
     private static final String ALGORITHMS = "RSA";
-    private static BASE64Encoder encoder = new BASE64Encoder();
-    private static BASE64Decoder decoder = new BASE64Decoder();
 
     private static String CHARSET = "UTF-8";
 
@@ -66,6 +63,8 @@ public class RSA {
     private static PublicKey publicKey;
     private static PrivateKey privateKey;
 
+    private RSA() {
+    }
 
     public static RSA getInstance() {
         RSA instance = RSAKeyUtilsInstance.INSTANCE.singleton;
@@ -127,8 +126,8 @@ public class RSA {
 
     public RSA rsaKey(RSAKey rsaKey) {
         try {
-            byte[] privateKeyBytes = new BASE64Decoder().decodeBuffer(rsaKey.getPrivateKey());
-            byte[] publicKeyBytes = new BASE64Decoder().decodeBuffer(rsaKey.getPublicKey());
+            byte[] privateKeyBytes = Base64.decodeBase64(rsaKey.getPrivateKey());
+            byte[] publicKeyBytes = Base64.decodeBase64(rsaKey.getPublicKey());
             PKCS8EncodedKeySpec pkcs8KeySpecPrivate = new PKCS8EncodedKeySpec(privateKeyBytes);
             X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(publicKeyBytes);
             KeyFactory keyFactory = KeyFactory.getInstance(ALGORITHMS);
@@ -180,15 +179,15 @@ public class RSA {
         byte[] publicKeyBytes = publicKey.getEncoded();
         byte[] privateKeyBytes = privateKey.getEncoded();
 
-        String publicKeyBase64 = encoder.encode(publicKeyBytes);
-        String privateKeyBase64 = encoder.encode(privateKeyBytes);
+        String publicKeyBase64 = Base64.encodeBase64String(publicKeyBytes);
+        String privateKeyBase64 = Base64.encodeBase64String(privateKeyBytes);
 
         //java语言需要pkcs8
         PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(privateKeyBytes);
         try {
             KeyFactory keyFactory = KeyFactory.getInstance(ALGORITHMS);
             PrivateKey privateKey2 = keyFactory.generatePrivate(keySpec);
-            privateKeyBase64 = encoder.encode(privateKey2.getEncoded());
+            privateKeyBase64 = Base64.encodeBase64String(privateKey2.getEncoded());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -223,7 +222,7 @@ public class RSA {
                              String privateKey,
                              SignType signType) {
         try {
-            PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(decoder.decodeBuffer(privateKey));
+            PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(Base64.decodeBase64(privateKey));
             KeyFactory keyf = KeyFactory.getInstance("RSA");
             PrivateKey priKey = keyf.generatePrivate(priPKCS8);
 
@@ -234,7 +233,7 @@ public class RSA {
 
             byte[] signed = signature.sign();
 
-            return encoder.encode(signed);
+            return Base64.encodeBase64String(signed);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -275,7 +274,7 @@ public class RSA {
             signature.initVerify(publicKey);
             signature.update(md.getBytes(CHARSET));
 
-            return signature.verify(decoder.decodeBuffer(sign));
+            return signature.verify(Base64.decodeBase64(sign));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -354,12 +353,12 @@ public class RSA {
         byBlock(Cipher.ENCRYPT_MODE, out, cipher, dataBytes, inputLen);
         byte[] encryptedData = out.toByteArray();
         out.close();
-        return encoder.encodeBuffer(encryptedData);
+        return Base64.encodeBase64String(encryptedData);
     }
 
     private String decrypt(Key key,
                            String encryptedData) throws Exception {
-        byte[] encryptedDataBytes = decoder.decodeBuffer(encryptedData);
+        byte[] encryptedDataBytes = Base64.decodeBase64(encryptedData);
         Cipher cipher = Cipher.getInstance(ALGORITHMS);
         cipher.init(Cipher.DECRYPT_MODE, key);
         int inputLen = encryptedDataBytes.length;
