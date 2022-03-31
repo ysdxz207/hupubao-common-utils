@@ -17,7 +17,7 @@
     <properties>
         <maven.compiler.level>1.8</maven.compiler.level>
         <encoding>UTF-8</encoding>
-        <springboot.version>2.2.6.RELEASE</springboot.version>
+        <springboot.version>2.5.12</springboot.version>
     </properties>
 
     <distributionManagement>
